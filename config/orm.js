@@ -64,7 +64,7 @@ function printQuestionMarks(num) {
         cb(result);
       });
     },
-    // An example of objColVals would be {name: panther, sleepy: true}
+    
     update: function(table, objColVals, condition, cb) {
       var queryString = "UPDATE " + table;
   
@@ -81,7 +81,18 @@ function printQuestionMarks(num) {
   
         cb(result);
       });
+    },
+
+    delete: function(table, condition, cb){
+        let queryString = "DELETE FROM ${table} WHERE (${condition})";
+        connection.query(queryString, function(err, results){
+            if (err) {
+                throw err;
+            }
+            cb(results);
+        });
     }
+
   };
   
   // Export the orm object for the model (cat.js).
