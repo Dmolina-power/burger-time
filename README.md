@@ -1,7 +1,7 @@
 
 ![GitHub followers](https://img.shields.io/github/followers/dmolina-power) 
   ![GitHub repo size](https://img.shields.io/github/repo-size/dmolina-power/burger-time) 
-  
+  ![GitHub last commit](https://img.shields.io/github/last-commit/dmolina-power/burger-time) 
   
   
 # burger-time
