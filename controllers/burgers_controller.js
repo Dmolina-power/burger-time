@@ -34,6 +34,23 @@ router.get("/", function(req, res) {
   });
 
 
+router.patch("/api/burger", function (req, res) {
+  let vals = true;
+  let cols = "devoured";
+  let condition = "id = " + req.body.ateID;
+  burger.update(vals, cols, condition, function(result){
+    if (result.changedRows == 0) {
+      return res.status(404).end();
+    }
+  });
+});
+
+router.delete("/api/burger", function(req, res) {
+  burger.reset(function(results) {
+      res.status(200).end();
+  });
+});
+
 
   
   
