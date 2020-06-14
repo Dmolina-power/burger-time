@@ -1,0 +1,26 @@
+{
+  "name": "burger-time",
+  "version": "1.0.0",
+  "description": "![GitHub followers](https://img.shields.io/github/followers/dmolina-power)    ![GitHub repo size](https://img.shields.io/github/repo-size/dmolina-power/burger-time)    ![GitHub last commit](https://img.shields.io/github/last-commit/dmolina-power/burger-time)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dmolina-power/burger-time.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dmolina-power/burger-time/issues"
+  },
+  "homepage": "https://github.com/Dmolina-power/burger-time#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1"
+  }
+}
