@@ -2,7 +2,7 @@ var express = require("express");
 
 var router = express.Router();
 
-var burger = require("../models/burger.js.js");
+var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
     burger.all(function(data) {
@@ -12,8 +12,10 @@ router.get("/", function(req, res) {
         data.forEach(function(burger) {
             if (burger.devoured){
                 burgersAte.push(burger);
+                console.log(burgersAte);
             }else {
                 burgersToEat.push(burger);
+                console.log(burgersToEat);
             }
         });
         burgersToEat.reverse();
@@ -28,28 +30,25 @@ router.get("/", function(req, res) {
 
 
   router.post("/api/burger", function(req, res) {
-    burger.create(["name"],[req.body.newBurger], function(results){
+    burger.create(["burger_name"],[req.body.newBurger], function(results){
         res.json({ id: results.insertId });
     });
   });
 
 
-router.patch("/api/burger", function (req, res) {
-  let vals = true;
-  let cols = "devoured";
-  let condition = "id = " + req.body.ateID;
-  burger.update(vals, cols, condition, function(result){
-    if (result.changedRows == 0) {
+router.put("/api/burger/:id", function (req, res) {
+  const objColsVals = { devoured: true};
+  const condition = "id = " + req.params.id;
+  burger.update(objColsVals, condition, function(result){
+    if (result.changedRows === 0) {
       return res.status(404).end();
     }
+    console.log(result);
+    res.sendStatus(200)
   });
 });
 
-router.delete("/api/burger", function(req, res) {
-  burger.reset(function(results) {
-      res.status(200).end();
-  });
-});
+
 
 
   

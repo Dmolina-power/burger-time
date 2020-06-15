@@ -1,0 +1,21 @@
+.jumbotron{
+    background-image: url(https://images.unsplash.com/photo-1575980726530-4e673bfa0ad8?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60);
+}    
+
+h1{
+    color: white;
+}
+  
+body, html{
+background-color: black;
+
+}  
+    
+    
+h5{
+    color: red;
+}
+
+p{
+    color: teal;
+}

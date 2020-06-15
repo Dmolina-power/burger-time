@@ -65,11 +65,11 @@ function printQuestionMarks(num) {
       });
     },
     
-    update: function(table, objColVals, condition, cb) {
+    update: function(table, objColsVals, condition, cb) {
       var queryString = "UPDATE " + table;
   
       queryString += " SET ";
-      queryString += objToSql(objColVals);
+      queryString += objToSql(objColsVals);
       queryString += " WHERE ";
       queryString += condition;
   
@@ -83,16 +83,7 @@ function printQuestionMarks(num) {
       });
     },
 
-    delete: function(table, condition, cb){
-        let queryString = "DELETE FROM ${table} WHERE (${condition})";
-        connection.query(queryString, function(err, results){
-            if (err) {
-                throw err;
-            }
-            cb(results);
-        });
-    }
-
+    
   };
   
   // Export the orm object for the model (cat.js).

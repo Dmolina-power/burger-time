@@ -1,51 +1,54 @@
-  <div class="col-12 col-md-4 order-md-first text-center mt-3">
-    <h5>Start Munching down!</h5>
-    <div class="eatBoxes">
-    {{#each burgersToEat}}
-  
+<div class="jumbotron text-center mb-0">
+  <h1>Burger Time!</h1>
+</div>
+<div id="appArea">
+  <div class="container p-3">
+    <div class="col-12 col-md-4 order-md-first text-center mt-3">
+      <h5>Start Munching down!</h5>
+      <div class="eatBoxes">
+        {{#each burgersToEat}}
+
         <div class="row">
           <div class="col-8">
-            <p>{{this.name}}</p>
+            <p>{{this.burger_name}}</p>
           </div>
           <div class="col-4">
-            <button class="devourButton btn btn-success" type="button" data-id="{{this.id}}" data-toggle="tooltip" title="Devour It!"></button>
+            <button class="devourButton btn-lg btn-success" type="button" data-id="{{this.id}}" data-toggle="tooltip"
+              title="Devour It!"></button>
           </div>
         </div>
-   
-      {{else}}
+
+        {{else}}
         <p>ALL GONE</p>
-    {{/each}}
-    </div>
-  </div>
-  
-  <div class="col-12 col-md-4 order-first mt-3">
-    <form class="text-center">
-      <div class="form-group text-center">
-        <label for="burger-type"><h5>Add a Burger!</h5></label>
-        <input type="text" class="form-control" id="burger-type" placeholder="What's your flavor?">
+        {{/each}}
       </div>
-      <button type="submit" class="btn btn-warning">Submit</button>
-    </form>
-  </div>
-
-  <div class="col-12 col-md-4 text-center mt-3">
-    <h5>You ate all of those burgers!</h5>
-    <div class="eatBoxes">
-    {{#each burgersAte}}
-      <p>{{this.name}}</p>
-      {{else}}
-        <p>When are you gonna start eating</p>
-    {{/each}}
     </div>
+
+    <div class="col-12 col-md-4 order-first mt-3">
+      <form class="text-center">
+        <div class="form-group text-center">
+          <label for="burger-type">
+            <h5>Add a Burger!</h5>
+          </label>
+          <input type="text" class="form-control" id="burger-type" placeholder="What's your flavor?">
+        </div>
+        <button type="submit" class="btn btn-warning">Submit</button>
+      </form>
+    </div>
+
+    <div class="col-12 col-md-4 text-center mt-3">
+      <h5>You ate all of those burgers!</h5>
+      <div class="eatBoxes">
+        {{#each burgersAte}}
+        <p>{{this.burger_name}}</p>
+        {{else}}
+        <p>When are you gonna start eating</p>
+        {{/each}}
+      </div>
+    </div>
+
+
+
+
   </div>
-
-
-  
-  
-  
-  
-
-  
-      
-     
-
+</div>
