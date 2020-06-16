@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL){
   password: "gtwfo4tov2c4t51h",
   database: "evv2830dvztalz5o"
 });
-  
+}  
 
 connection.connect(function(err) {
   if (err) {
